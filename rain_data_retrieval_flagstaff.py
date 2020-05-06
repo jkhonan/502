@@ -155,9 +155,9 @@ url='https://rainlog.org/api/'
          '--out', help='outfile path. default rainlog_{start}_{end}.csv')
      parser.add_argument(
          '--region',
-         help='predefined region in this module (default: BOX_TUCSON)',
-         default='BOX_TUCSON')
-     args = parser.parse_args(20190101, 20191231)
+         help='predefined region in this module (default: BOX_FLAGSTAFF)',
+         default='BOX_FLAGSTAFF')
+     args = parser.parse_args( )
  
      start = pd.Timestamp(args.start)
      end = pd.Timestamp(args.end)
