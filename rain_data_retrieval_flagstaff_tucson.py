@@ -163,11 +163,13 @@ url='https://rainlog.org/api/'
      end = pd.Timestamp(args.end)
      region = globals()[args.region]
  
-     readings_revisions = get_readings_with_metadata(2015, 2020, BOX_FLAGSTAFF)
- 
+     readings_revisions1 = get_readings_with_metadata(2015, 2020, 'BOX_FLAGSTAFF')
+     readings_revisions2 = get_readings_with_metadata(2015, 2020, 'BOX_TUCSON')
+
      if args.out:
          outfile = args.out
      else:
          ftime = '%Y%m%d'
-         outfile = f'rainlog_{start.strftime(ftime)}_{end.strftime(ftime)}.csv'
-     readings_revisions.to_csv(outfile)
+         outfile = f'rainlog_{region}_{start.strftime(ftime)}_{end.strftime(ftime)}.csv'
+     readings_revisions1.to_csv(outfile)
+     readings_revisions2.to_csv(outfile)
