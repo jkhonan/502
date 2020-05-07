@@ -1,9 +1,7 @@
-# 502
+# BE 502 Final Project
 
-This is an attempt.
+Under the supervision of Dr. Haiquan Li.
 
-The goal is to use a system that my professor can read and help me to fix/debug.
+**Group 2** Jenna Honan, Jorge Ramos, Qianying He, Kai Blumberg
 
-He will have to do a lot of work, because I am not good at this!
-
-Sorry, Dr. Li.
+See our [Report here](https://docs.google.com/document/d/1CnFWl8Kjo7gy4PdclWB6YrTiREp_fqwqDyUgAHnzyIk/edit?usp=sharing)
