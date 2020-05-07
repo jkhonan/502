@@ -97,9 +97,9 @@ url='https://rainlog.org/api/'
  
  def get_readings_with_metadata(start, end, region):
      params = {
-         'dateRangeStart': parse_date(start),
-         'dateRangeEnd': parse_date(end),
-         'region': region
+         'dateRangeStart': parse_date('2015'),
+         'dateRangeEnd': parse_date('2020'),
+         'region': 'BOX_FLAGSTAFF'
      }
 
      """
