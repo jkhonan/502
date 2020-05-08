@@ -192,4 +192,4 @@ if __name__ == '__main__':
         print("test")
         print(len(sys.argv))
         outfile = f'rainlog_{start.strftime(ftime)}_{end.strftime(ftime)}.csv'
-    readings_revisions.to_csv(outfile)
+    readings_revisions.to_csv(outfile, sep='\t')
