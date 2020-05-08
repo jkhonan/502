@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
  import sys
  import argparse
  import json
@@ -5,7 +7,7 @@
  import numpy as np
  import pandas as pd
  import requests
- 
+
  RAINLOG_API_BASE = 'https://rainlog.org/api/'
  RAINLOG_VERSIONED_API_BASE = RAINLOG_API_BASE + '1.0/'
  RAINLOG_READING_GETFILTERED = \
@@ -14,15 +16,15 @@
  RAINLOG_GAUGEREVISION_GETFILTERED = \
      RAINLOG_VERSIONED_API_BASE + 'GaugeRevision/getFiltered'
  RAINLOG_DEFAULT_HEADERS_NO_AUTH = {'content-type': 'application/json'}
- 
+
 url='https://rainlog.org/api/'
- 
+
  CIRCLE_NEAR_UA = {
      "type": "Circle",
      "center": {'lat': 32.2133, 'lng': -110.9542},
      "radius": .1  # in miles
  }
- 
+
  BOX_NEAR_UA = {
      "type": "Rectangle",
      "westLng": -111.0488008,
@@ -30,7 +32,7 @@ url='https://rainlog.org/api/'
      "northLat": 32.3332841,
      "southLat": 32.1332841,
  }
- 
+
  BOX_TUCSON = {
      "type": "Rectangle",
      "westLng": -111.432962,
@@ -57,13 +59,13 @@ url='https://rainlog.org/api/'
      )
      r.raise_for_status()
      return r.content
- 
- 
+
+
  def parse_date(datetimelike):
      dt = pd.Timestamp(datetimelike)
      return dt.strftime('%Y-%m-%d')
- 
- 
+
+
  def get_readings(start, end, region, limit=None):
      params = {
          'dateRangeStart': parse_date(start),
@@ -74,16 +76,16 @@ url='https://rainlog.org/api/'
          params['pagination'] = {'limit': 3}
      readings = api_post(RAINLOG_READING_GETFILTERED, params)
      return readings
- 
- 
+
+
  def readings_to_gauge_revision_ids(readings):
      if isinstance(readings, pd.DataFrame):
          revision_ids = readings['gaugeRevisionId'].unique().tolist()
      else:
          raise TypeError('unsupported readings type')
      return revision_ids
- 
- 
+
+
  def get_gauge_revisions(revision_ids, start, end, region):
      params = {
          'dateRangeStart': parse_date(start),
@@ -93,8 +95,8 @@ url='https://rainlog.org/api/'
      }
      revisions = api_post(RAINLOG_GAUGEREVISION_GETFILTERED, params)
      return revisions
- 
- 
+
+
  def get_readings_with_metadata(start, end, region):
      params = {
          'dateRangeStart': parse_date('2015'),
@@ -133,8 +135,8 @@ url='https://rainlog.org/api/'
                                             on='gaugeRevisionId',
                                             how='inner')
      return readings_revisions
- 
- 
+
+
  def to_dataframe(json_bytes):
      """
      Convert API response to pandas DataFrame. Input must be in bytes.
@@ -144,8 +146,8 @@ url='https://rainlog.org/api/'
      """
      df = pd.read_json(json_bytes)
      return df
- 
- 
+
+
  if __name__ == '__main__':
      parser = argparse.ArgumentParser(
          description='get data from the rainlog API')
@@ -158,11 +160,11 @@ url='https://rainlog.org/api/'
          help='predefined region in this module (default: BOX_TUCSON)',
          default='BOX_TUCSON')
      args = parser.parse_args( )
- 
+
      start = pd.Timestamp(args.start)
      end = pd.Timestamp(args.end)
      region = globals()[args.region]
- 
+
      readings_revisions1 = get_readings_with_metadata(2015, 2020, 'BOX_FLAGSTAFF')
      readings_revisions2 = get_readings_with_metadata(2015, 2020, 'BOX_TUCSON')
 
