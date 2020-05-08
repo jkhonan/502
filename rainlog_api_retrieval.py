@@ -47,6 +47,13 @@ BOX_TUCSON = {
     "southLat": 31.689010,
 }
 
+BOX_FLAGSTAFF = {
+ "type": "Rectangle",
+ "westLng": -111.706160,
+ "eastLng": -111.504286,
+ "northLat": 35.242277,
+ "southLat": 35.118246,
+}
 
 # call the api, return the json, raises exception on error
 def api_post(url, params):
