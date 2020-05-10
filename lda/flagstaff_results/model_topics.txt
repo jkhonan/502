@@ -1,0 +1,54 @@
+[(5,
+  '0.444*"night" + 0.263*"chilly" + 0.164*"wind" + 0.035*"shower" + '
+  '0.022*"high"'),
+ (11,
+  '0.305*"sunny" + 0.302*"night" + 0.297*"warm" + 0.019*"ytd" + '
+  '0.011*"winter"'),
+ (15,
+  '0.340*"sunny" + 0.332*"wind" + 0.227*"day" + 0.010*"shower" + '
+  '0.008*"colder"'),
+ (0,
+  '0.466*"night" + 0.176*"day" + 0.165*"chilly" + 0.074*"sunny" + '
+  '0.023*"accumulation"'),
+ (10,
+  '0.514*"cloud" + 0.307*"sun" + 0.057*"sprinkle" + 0.018*"vacation" + '
+  '0.016*"extremely"'),
+ (16,
+  '0.315*"day" + 0.255*"warm" + 0.150*"night" + 0.145*"cool" + 0.028*"smoke"'),
+ (6,
+  '0.435*"cold" + 0.249*"night" + 0.188*"sunny" + 0.059*"chilly" + '
+  '0.023*"warmer"'),
+ (20,
+  '0.306*"afternoon" + 0.260*"rain" + 0.164*"late" + 0.129*"overcast" + '
+  '0.044*"mid"'),
+ (19, '0.388*"snow" + 0.311*"rain" + 0.077*"mix" + 0.062*"flurry" + 0.025*"5"'),
+ (1,
+  '0.450*"snow" + 0.054*"melted" + 0.049*"sleet" + 0.044*"inch" + '
+  '0.039*"ground"'),
+ (17,
+  '0.314*"cool" + 0.251*"wind" + 0.246*"hot" + 0.089*"humid" + 0.013*"amount"'),
+ (12,
+  '0.447*"day" + 0.222*"night" + 0.197*"warm" + 0.026*"humidity" + '
+  '0.021*"lot"'),
+ (13,
+  '0.201*"cool" + 0.196*"night" + 0.140*"day" + 0.138*"light" + '
+  '0.114*"overcast"'),
+ (4,
+  '0.200*"cloudy" + 0.181*"morning" + 0.129*"sprinkle" + 0.126*"early" + '
+  '0.110*"overnight"'),
+ (18,
+  '0.594*"cool" + 0.332*"night" + 0.010*"cast" + 0.005*"sun" + 0.005*"water"'),
+ (21,
+  '0.327*"warm" + 0.218*"day" + 0.184*"sunny" + 0.120*"chilly" + 0.075*"wind"'),
+ (9,
+  '0.411*"windy" + 0.365*"night" + 0.119*"chilly" + 0.012*"starting" + '
+  '0.010*"lasting"'),
+ (14,
+  '0.316*"chilly" + 0.308*"day" + 0.294*"sunny" + 0.011*"light" + '
+  '0.008*"overnite"'),
+ (3,
+  '0.483*"day" + 0.176*"cooler" + 0.163*"night" + 0.094*"warmer" + '
+  '0.021*"big"'),
+ (8,
+  '0.463*"sunny" + 0.244*"wind" + 0.207*"chilly" + 0.017*"total" + '
+  '0.009*"reading"')]

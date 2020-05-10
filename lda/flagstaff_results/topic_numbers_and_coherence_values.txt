@@ -1,0 +1,8 @@
+Num Topics = 2  has Coherence Value of 0.4662
+Num Topics = 7  has Coherence Value of 0.5828
+Num Topics = 12  has Coherence Value of 0.6056
+Num Topics = 17  has Coherence Value of 0.6584
+Num Topics = 22  has Coherence Value of 0.6731
+Num Topics = 27  has Coherence Value of 0.68
+Num Topics = 32  has Coherence Value of 0.6933
+Num Topics = 37  has Coherence Value of 0.7025
