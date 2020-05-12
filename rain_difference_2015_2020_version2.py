@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import seaborn as sb
 tucson_rain = pd.read_csv(r"data/tucson_rain.txt", sep='\t') #removed Jenna's path so that this can be ran easily
 flagstaff_rain = pd.read_csv(r"data/flagstaff_rain.txt", sep='\t') #removed Jenna's path so that this can be ran easily
 
@@ -56,9 +57,12 @@ res_flagstaff.summary()
 tucson_rain["city"]="tucson"
 flagstaff_rain["city"]="flagstaff"
 rain=pd.concat([tucson_rain, flagstaff_rain], axis=0)
-rain_glm=smf.glm(formula="rainAmount~month+year+city",data=rain, family=sm.families.Gaussian())
+rain_glm=smf.glm(formula="rainAmount~month+year+city+lat+lng+gaugeType",data=rain, family=sm.families.Gaussian())
 res=rain_glm.fit()
 res.summary()
+
+plot=sb.boxplot(x="month",y="rainAmount",hue="city",data=rain,palette="Set1", fliersize=2); plot.set(ylim=(0,10))
+
 #<class 'statsmodels.iolib.summary.Summary'>
 """
                  Generalized Linear Model Regression Results                  
