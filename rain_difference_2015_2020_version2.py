@@ -53,6 +53,12 @@ res_tucson=rain_glm_tucson.fit()
 res_flagstaff=rain_glm_flagstaff.fit()
 
 res_flagstaff.summary()
+tucson_rain["city"]="tucson"
+flagstaff_rain["city"]="flagstaff"
+rain=pd.concat([tucson_rain, flagstaff_rain], axis=0)
+rain_glm=smf.glm(formula="rainAmount~month+year+city",data=rain, family=sm.families.Gaussian())
+res=rain_glm.fit()
+res.summary()
 #<class 'statsmodels.iolib.summary.Summary'>
 """
                  Generalized Linear Model Regression Results                  
