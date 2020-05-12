@@ -1,7 +1,7 @@
 import os
 import pandas as pd
-tucson_rain = pd.read_csv(r"/Users/jennahonan/PycharmProjects/502/data/tucson_rain.txt", sep='\t')
-flagstaff_rain = pd.read_csv(r"/Users/jennahonan/PycharmProjects/502/data/flagstaff_rain.txt", sep='\t')
+tucson_rain = pd.read_csv(r"data/tucson_rain.txt", sep='\t') #removed Jenna's path so that this can be ran easily
+flagstaff_rain = pd.read_csv(r"data/flagstaff_rain.txt", sep='\t') #removed Jenna's path so that this can be ran easily
 
 tucson_rain2 = tucson_rain['quality'] == 'Good'
 tucson_rain = tucson_rain[tucson_rain2]
@@ -41,7 +41,7 @@ df_tucson.insert(3, "flagstaff rain", df_flagstaff_rain)
 
 df_tucson["difference"]=df_tucson["tucson rain"] - df_tucson["flagstaff rain"]
 
-df_tucson.to_csv(r"/Users/jennahonan/PycharmProjects/502/data/rain_difference_2015_2020_version2.txt", header=None, index=None, sep='\t', mode='a')
+df_tucson.to_csv(r"data/rain_difference_2015_2020_version2.txt", header=None, index=None, sep='\t', mode='a')
 
 from scipy import stats
 import statsmodels.api as sm
@@ -53,7 +53,7 @@ res_tucson=rain_glm_tucson.fit()
 res_flagstaff=rain_glm_flagstaff.fit()
 
 res_flagstaff.summary()
-<class 'statsmodels.iolib.summary.Summary'>
+#<class 'statsmodels.iolib.summary.Summary'>
 """
                  Generalized Linear Model Regression Results                  
 ==============================================================================
@@ -90,7 +90,7 @@ year[T.2020]   -11.3956     13.389     -0.851      0.395     -37.638      14.847
 """
 
 res_tucson.summary()
-<class 'statsmodels.iolib.summary.Summary'>
+#<class 'statsmodels.iolib.summary.Summary'>
 """
                  Generalized Linear Model Regression Results                  
 ==============================================================================
